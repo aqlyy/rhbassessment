@@ -3,9 +3,8 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { SearchPageComponent } from './search-page.component';
 import { RouterModule } from '@angular/router';
-import { PaginationComponent } from '../elements/pagination/pagination.component';
 import { CroptextPipe } from 'src/app/pipes/croptext.pipe';
-import {NgxPaginationModule} from 'ngx-pagination';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   imports: [
@@ -18,7 +17,6 @@ import {NgxPaginationModule} from 'ngx-pagination';
   ],
   declarations: [
     SearchPageComponent,
-    PaginationComponent,
     CroptextPipe
   ]
 })

@@ -1,0 +1,33 @@
+<div class="search-wrapper">
+  <!-- Credit to the artist -->
+  <img src="./assets/img/lindsay-henwood-7_kRuX1hSXM-unsplash.jpg" alt="background">
+  <div class="searchbar" [class.search-on]="isSearchOn" @fadeIn>
+    <div class="title">GitHub Search</div>
+    <form (keydown.enter)="$event.preventDefault(); submitForm();">
+      <input name="search" id="search" type="text" placeholder="Enter keywords" [(ngModel)]="searchText"
+        #search="ngModel" required />
+      <button type="button" (click)="submitForm()" [disabled]="!search.valid">SEARCH</button>
+    </form>
+  </div>
+  <div class="pagination" *ngIf="(searchResults && searchResults.length > 0) && isSearchOn">
+    <pagination-controls (pageChange)="changePage($event)" responsive="true" previousLabel="Previous" nextLabel="Next">
+    </pagination-controls>
+  </div>
+  <h1 *ngIf="(searchResults && searchResults.length > 0) && isSearchOn">{{maxPage}} repository results.</h1>
+  <h1 *ngIf="!(searchResults && searchResults.length > 0) && isSearchOn">No results found.</h1>
+  <div
+    *ngFor="let result of searchResults | paginate: { itemsPerPage: itemsPerPage, currentPage: page, totalItems: maxPage }"
+    class="item-wrapper" @fadeIn>
+    <div class="item">
+      <div class="name"><a (click)="openUrl(result.html_url)" href="javascript:;">{{result.full_name}}</a></div>
+      <div class="description">{{result.description | croptext: [0,200]}}</div>
+      <div class="lastupdate">Updated on {{result.updated_at | date : 'EE, dd MMM yyyy'}}</div>
+    </div>
+    <div class="language">
+      <p>{{result.language ? result.language : "-"}}</p>
+    </div>
+    <div class="stars">
+      <p>{{result.stargazers_count}}</p>
+    </div>
+  </div>
+</div>

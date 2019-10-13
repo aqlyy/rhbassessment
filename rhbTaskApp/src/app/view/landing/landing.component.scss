@@ -1,0 +1,54 @@
+@import '../../../assets/scss/variables';
+
+.landing-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    min-height: 600px;
+
+    @media (max-width: $max-m-size) {
+        height: calc(100vh - 45px) !important;
+    }
+
+    >div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    img {
+        &.bg {
+            display: block;
+            object-fit: cover;
+            opacity: 0.5;
+            position: absolute;
+            z-index: -1;
+            width: 100vw;
+            height: 100vh;
+        }
+    }
+
+    button {
+        margin-top: 30px;
+        background-color: $secondary-color;
+        color: #fff;
+    }
+
+    h1 {
+        color: $grey-dark;
+    }
+}
+
+.content-wrapper {
+    margin: auto;
+}
+
+.owner {
+    font-size: 20px;
+    color: $grey-dark;
+
+    span {
+        font-size: 30px;
+        font-weight: bold;
+    }
+}

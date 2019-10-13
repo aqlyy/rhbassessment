@@ -1,0 +1,14 @@
+@import '../assets/scss/variables';
+
+.web-only {
+    @media (max-width: $max-m-size) {
+        display: none !important;
+    }
+}
+
+.mobile-only {
+    @media (min-width: $min-m-size) {
+        display: none !important;
+    }
+}
+

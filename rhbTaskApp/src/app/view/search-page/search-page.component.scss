@@ -1,0 +1,240 @@
+@import '../../../assets/scss/variables';
+
+.item-wrapper {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1);
+    margin: 5px;
+    padding: 30px;
+    position: relative;
+    width: calc(100% - 30px);
+    display: flex;
+
+    @media (max-width: $max-m-size) {
+        border-radius: 0;
+        margin: 15px 0;
+        width: auto;
+        flex-direction: column;
+    }
+
+    .item {
+        width: 60%;
+
+        @media (max-width: $max-m-size) {
+            width: 100%;
+        }
+    }
+
+    .name {
+        font-weight: bold;
+        font-size: 20px;
+
+        @media (max-width: $max-m-size) {
+            font-size: 15px;
+        }
+
+        a {
+            color: $primary-color;
+        }
+    }
+
+    .lastupdate {
+        font-size: 13px;
+        color: gray;
+    }
+
+    .language {
+        width: 20%;
+        text-align: center;
+        padding: 20px 0;
+
+        @media (max-width: $max-m-size) {
+            text-align: left;
+        }
+    }
+
+    .stars {
+        width: 20%;
+        background-image: url("./../../../assets/img/favourite-star.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        text-align: center;
+        padding: 20px 0;
+        font-weight: bold;
+        height: 46px;
+
+        @media (max-width: $max-m-size) {
+            align-self: flex-end;
+        }
+    }
+}
+
+.search-wrapper {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+
+    img {
+        position: absolute;
+        z-index: -1;
+        opacity: 0.3;
+        display: block;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+    }
+    
+    h1 {
+        color: $secondary-color;
+        padding: 0 14px;
+
+        @media (max-width: $max-m-size) {
+            font-size: 20px;
+        }
+    }
+}
+
+.searchbar {
+    margin: auto;
+    margin-top: calc(50vh - 27px);
+    width: 80%;
+    transition: all 0.5s ease-out;
+
+    form {
+        @media (max-width: 1023.98px) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    &.search-on {
+        margin-top: 5px;
+        margin-bottom: 0;
+        width: 70%;
+
+        input {
+            height: 40px;
+        }    
+
+        button {
+            padding: 10px 30px;
+        }
+
+        .title {
+            @media (min-width: $min-m-size) {
+                font-size: 15px;
+            }
+        }
+    }
+
+    input {
+        width: 75%;
+
+        @media (max-width: 1023.98px) {
+            width: 90%;
+        }
+    }
+    
+    button {
+        width: 19%;
+
+        @media (max-width: 1023.98px) {
+            width: 90%;
+            margin: 0;
+        }
+
+        &:disabled {
+            pointer-events: none;
+        }
+    }
+
+    .title {
+        color: $grey-dark;
+        font-size: 20px;
+
+        @media (max-width: 1023.98px) {
+            text-align: center;
+        }
+    }
+}
+
+.pagination {
+    margin: auto;
+}
+
+::ng-deep{
+    &.ngx-pagination {
+        padding: 0 !important;
+
+        display: inline-block;
+        height: 60px;
+        margin-top: 70px;
+        padding: 0 25px;
+        border-radius: 35px;
+        background-color: $grey-light;
+
+        @media (max-width: $max-m-size) {
+            height: 40px;
+        }
+
+        a:hover {
+            background: none !important;
+            color: $white;
+        }
+    }
+      
+    &li.ng-star-inserted {
+        display: block;
+        padding: 0 10px !important;
+        float: left;
+        transition: $duration $easing;
+        color: $grey;
+        font-size: 20px;
+        line-height: 60px;
+        height: 60px !important;
+
+        @media (max-width: $max-m-size) {
+            font-size: 15px;
+            line-height: 40px;
+            height: 40px !important;
+        }
+    
+        &:hover,
+        &.current {
+            background-color: $primary-color;
+            color: $white;
+        }
+      
+        &.pagination-previous,
+        &.pagination-next{
+            &:hover {
+                background-color: transparent;
+                color: $secondary-color !important;
+            }
+
+            &.disabled:hover {
+                color: #cacaca !important;
+            }
+        }
+        
+    }
+
+    &li.small-screen {
+        display: block;
+        padding: 0 10px !important;
+        float: left;
+        transition: $duration $easing;
+        color: $grey;
+        font-size: 20px;
+        line-height: 60px;
+        height: 60px !important;
+
+        @media (max-width: $max-m-size) {
+            font-size: 15px;
+            line-height: 40px;
+            height: 40px !important;
+        }
+    }
+}

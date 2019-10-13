@@ -75,7 +75,7 @@
     flex-direction: column;
 
     img {
-        position: absolute;
+        position: fixed;
         z-index: -1;
         opacity: 0.3;
         display: block;

@@ -1,6 +1,10 @@
 # RhbTaskApp
 
+RHB Front-end Assessment by Aqly Kamarudin.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
+
+## Installation
+Run `npm i` for dependencies installation.
 
 ## Development server
 

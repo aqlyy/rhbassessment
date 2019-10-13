@@ -1,2 +1,2 @@
 # rhbassessment
-Assessment For Frontend Developer Position in RHB
+RHB Front-end Assessment by AQLY KAMARUDIN
